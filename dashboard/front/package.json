@@ -10,13 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^1.4.0",
     "babel-plugin-component": "^1.1.1",
     "element-ui": "^2.15.13",
     "unplugin-element-plus": "^0.7.1",
-=======
->>>>>>> 708d138 (init dashboard)
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

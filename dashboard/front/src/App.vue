@@ -3,7 +3,6 @@
 <router-view/>
 =======
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 >>>>>>> 708d138 (init dashboard)

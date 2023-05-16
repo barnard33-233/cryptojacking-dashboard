@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-<<<<<<< HEAD
 import axios from 'axios'
 import ElCard from 'element-ui/packages/card';
 import ElRow from 'element-ui/packages/row';
@@ -14,6 +13,7 @@ import ElHeader from 'element-ui/packages/header'
 import ElMain from 'element-ui/packages/main'
 import 'element-ui/lib/theme-chalk/index.css'
 import './global.css'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 Vue.use(ElCard)
@@ -24,19 +24,13 @@ Vue.use(ElAside)
 Vue.use(ElHeader)
 Vue.use(ElMain)
 Vue.use(axios)
-=======
 
 Vue.config.productionTip = false
->>>>>>> 708d138 (init dashboard)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-<<<<<<< HEAD
-  template: '<App/>',
-=======
   template: '<App/>'
->>>>>>> 708d138 (init dashboard)
 })

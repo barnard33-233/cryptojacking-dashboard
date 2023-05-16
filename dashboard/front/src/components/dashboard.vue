@@ -34,7 +34,6 @@ export default {
       msg: "hihihi"
     }
   },
-
   methods:{
     getRecordData(){
       axios
@@ -50,7 +49,6 @@ export default {
       }, 3000)
     },
   },
-
   created() {
     this.polling()
   },
