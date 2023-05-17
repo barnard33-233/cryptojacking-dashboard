@@ -26,6 +26,14 @@ Vue.use(ElMain)
 Vue.use(axios)
 
 Vue.config.productionTip = false
+Vue.use(ElCard)
+Vue.use(ElRow)
+Vue.use(ElCol)
+Vue.use(ElContainer)
+Vue.use(ElAside)
+Vue.use(ElHeader)
+Vue.use(ElMain)
+Vue.use(axios)
 
 /* eslint-disable no-new */
 new Vue({
