@@ -1,21 +1,40 @@
-<!--polling, get DeviceRecord data-->
+<!--
+TODO: 整体设计
 
+-->
 <template>
-  <div class="dashboard">
-  {{record}}
-  </div>
+  <el-container class="main-container">
+    <el-aside class="aside">Aside</el-aside>
+
+    <el-container>
+      <el-header class="header">Header</el-header>
+      <el-main>
+        <viewJson :data="record"></viewJson>
+      </el-main>
+    </el-container>
+
+  </el-container>
 </template>
 
 <script>
+
 import axios from 'axios'
+import viewJson from './view-json.vue';
+
 export default {
+
   name: 'dashboard',
+  components: {
+    viewJson
+  },
+
   data (){
     return {
       record: null,
       msg: "hihihi"
     }
   },
+
   methods:{
     getRecordData(){
       axios
@@ -31,11 +50,26 @@ export default {
       }, 3000)
     },
   },
+
   created() {
     this.polling()
   },
 }
+
 </script>
 
 <style scoped>
+.main-container{
+  height:100%;
+}
+.header{
+  text-align: left;
+  background-color: aliceblue;
+  /* TODO: just mark it differently */
+}
+
+.aside{
+  background-color: antiquewhite;
+  /* TODO: just mark it differently */
+}
 </style>
