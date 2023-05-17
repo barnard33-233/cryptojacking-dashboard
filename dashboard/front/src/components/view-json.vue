@@ -1,41 +1,41 @@
 <template>
 <div class="container">
-    <el-card class="card" shadow="always" v-for="item in data">
-        <span class="mac">{{item.pk}}</span>
-        <div class="ip">ip: {{item.fields.ip}}</div>
-    </el-card>
+  <el-card class="card" shadow="always" v-for="item in data">
+    <span class="mac">{{item.pk}}</span>
+    <div class="ip">ip: {{item.fields.ip}}</div>
+  </el-card>
 </div>
 </template>
 
 <script>
 export default{
-    props:{data:[]},
-    data(){
-        return {
-        }
-    },
+  props:{data:[]},
+  data(){
+    return {
+    }
+  },
 }
 
 </script>
 
 <style scoped>
 .container{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .card{
-    --item-width: 200px;
-    width: calc(var(--item-width));
-    height: 100px;
-    padding: 4px;
-    border-radius: 4px;
-    text-align: left;
-    line-height: 240%;
-    margin-top: 20px;
-    margin-right: calc((100% - var(--item-width) * var(--n)) / (var(--n) + 1));
-    margin-left: 20px;
+  --item-width: 200px;
+  width: calc(var(--item-width));
+  height: 100px;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: left;
+  line-height: 240%;
+  margin-top: 20px;
+  margin-right: calc((100% - var(--item-width) * var(--n)) / (var(--n) + 1));
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -55,13 +55,13 @@ export default{
 }
 
 .mac{
-    background-color: rgb(137, 221, 131);
-    padding: 2px;
-    border-radius: 5px;
-    font-size: 17px;
+  background-color: rgb(137, 221, 131);
+  padding: 2px;
+  border-radius: 5px;
+  font-size: 17px;
 }
 .ip{
-    font-size: 17px;
-    color: black;
+  font-size: 17px;
+  color: black;
 }
 </style>
