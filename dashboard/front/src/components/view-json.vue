@@ -1,7 +1,7 @@
 <template>
 <div class="container">
-  <el-card class="card" shadow="always" v-for="item in data">
-    <span class="mac">{{item.pk}}</span>
+  <el-card class="card" shadow="always"  v-for="item in data">
+    <span class="mac" :style="get_color(item)">{{item.pk}}</span>
     <div class="ip">ip: {{item.fields.ip}}</div>
   </el-card>
 </div>
@@ -14,6 +14,22 @@ export default{
     return {
     }
   },
+  computed:{
+    get_color() {
+      return (item) => {
+        if(item.fields.safety == 1){
+          return {'background-color' : 'rgb(255, 105, 105)'}
+        }
+        else if(item.fields.safety == 0){
+          return {'background-color' : 'rgb(102, 255, 105)'}
+        }
+        else{
+          return {'background-color' : 'rgb(195, 195, 195)'}
+        }
+      }
+      
+    }
+  }
 }
 
 </script>
@@ -55,7 +71,7 @@ export default{
 }
 
 .mac{
-  background-color: rgb(137, 221, 131);
+  /* background-color: rgb(195, 195, 195); */
   padding: 2px;
   border-radius: 5px;
   font-size: 17px;
