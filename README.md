@@ -1,7 +1,5 @@
 # cryptojacking detection dashboard
 
-a demo
-
 ## Introduction
 
 ## Deploy
