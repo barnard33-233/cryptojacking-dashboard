@@ -1,3 +1,8 @@
+# extracted files:
+*.zip
+*.rar
+*.gz
+
 # vue.js
 .DS_Store
 node_modules
