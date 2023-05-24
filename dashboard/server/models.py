@@ -1,6 +1,5 @@
 from django.db import models
 
-mtime = ""
 
 
 class DeviceRecord(models.Model):
