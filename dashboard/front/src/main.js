@@ -13,17 +13,6 @@ import ElHeader from 'element-ui/packages/header'
 import ElMain from 'element-ui/packages/main'
 import 'element-ui/lib/theme-chalk/index.css'
 import './global.css'
-import axios from 'axios'
-
-Vue.config.productionTip = false
-Vue.use(ElCard)
-Vue.use(ElRow)
-Vue.use(ElCol)
-Vue.use(ElContainer)
-Vue.use(ElAside)
-Vue.use(ElHeader)
-Vue.use(ElMain)
-Vue.use(axios)
 
 Vue.config.productionTip = false
 Vue.use(ElCard)
