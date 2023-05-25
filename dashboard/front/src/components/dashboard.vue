@@ -4,10 +4,14 @@ TODO: 整体设计
 -->
 <template>
   <el-container class="main-container">
-    <el-aside class="aside">Aside</el-aside>
+    <el-aside class="aside">
+      <side></side>
+    </el-aside>
 
     <el-container>
-      <el-header class="header">Header</el-header>
+      <el-header class="header">
+        <h1 class="title">Devices</h1>
+      </el-header>
       <el-main>
         <viewJson :data="record"></viewJson>
       </el-main>
@@ -20,12 +24,14 @@ TODO: 整体设计
 
 import axios from 'axios'
 import viewJson from './view-json.vue';
+import side from './side.vue'
 
 export default {
 
   name: 'dashboard',
   components: {
-    viewJson
+    viewJson,
+    side,
   },
 
   data (){
@@ -52,6 +58,7 @@ export default {
   },
 
   created() {
+    // getRecordData()
     this.polling()
   },
 }
@@ -59,17 +66,34 @@ export default {
 </script>
 
 <style scoped>
+.logo{
+  padding: 10px 20px;
+  width: 70%;
+  height: 70%;
+}
 .main-container{
   height:100%;
 }
 .header{
   text-align: left;
-  background-color: aliceblue;
+  font: optional;
+  /* background-color: aliceblue; */
   /* TODO: just mark it differently */
+}
+.title{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+  font-size: xx-large;
+  color: rgb(0, 115, 187);
+  margin-left: 20px;
 }
 
 .aside{
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* TODO: just mark it differently */
 }
 </style>

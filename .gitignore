@@ -3,6 +3,9 @@
 *.rar
 *.gz
 
+# data
+*.csv
+
 # vue.js
 .DS_Store
 node_modules
