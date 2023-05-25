@@ -4,6 +4,9 @@ a demo
 
 ## Introduction
 
+example:
+![](./doc/front.png)
+
 ## Deploy
 
 TODO

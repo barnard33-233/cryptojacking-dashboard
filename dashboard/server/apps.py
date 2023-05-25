@@ -2,6 +2,7 @@ from django.apps import AppConfig
 from django.apps import apps
 import datetime
 import threading
+import time
 from .tests import test_data
 # from .models import DeviceRecord, Modified
 mtime = ""
@@ -37,19 +38,22 @@ class ServerConfig(AppConfig):
 # TODO: All things below
 class Detector:
     def __init__(self) -> None:
+        # TODO call the real init function here
         pass
 
     def packet_capture(self):
-        # call the real packet_capture here
+        # TODO call the real packet_capture here
         return None
-        pass
     
     def classify(self, data):
         # call the real classifier here
-        pass
+        return None
 
     def mainloop(self):
         while True:
+            print("mainloop running")
+            time.sleep(3) # XXX DEBUG, delete this later
+
             # get data
             data = self.packet_capture()
 
@@ -57,11 +61,13 @@ class Detector:
             result = self.classify(data)
 
             # write it to database
-            # Test Here
             # TODO
 
 
 def start_detector():
     # new a Detector
+    detector = Detector()
     # create a subprocess
+    detector_thread = threading.Thread(target=detector.mainloop)
+    detector_thread.start()
     pass

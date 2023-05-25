@@ -9,27 +9,18 @@ import joblib
 
 warnings.filterwarnings("ignore")
 
-#################################################################
-#                                                               #
-#                         导入恶意数据集                           #
-#                                                               #
-#################################################################
+model: None
 
-df1 = pd.read_csv('test.csv')
-# test.csv数据集提前填充了100条数据，最后加入3组数据来自3个mac地址的，分别是无害、恶意和无害，因此预期结果为0、1、0
-
-#################################################################
-#                                                               #
-#                   给数据集添加标签                               #
-#                                                               #
-#################################################################
-df1.insert(7, "Is_malicious", 1)
-
-# 加载模型
-model = joblib.load('model.pkl')
+def init():
+    global model
+    model = joblib.load('model.pkl')
+    df = pd.read_csv('test.csv')
+    df.insert(7, "Is_malicious", 1)
+    return df
 
 
-def classifier(a):
+def classifier(a : pd.DataFrame):
+    global model
     df = a.copy()
 
     # 对数据以10个为一组进行分组
@@ -71,6 +62,7 @@ def classifier(a):
     print('18:56:80:17:d0:ef', '192.168.0.19', Y[i-3])
     print('a4:bb:6d:ac:e1:fd', '192.168.1.139', Y[i-2])
     print('dc:a6:32:67:66:4b', '192.168.1.120', Y[i-1])
+    
 
 
 if __name__ == '__main__':
