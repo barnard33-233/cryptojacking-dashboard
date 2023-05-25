@@ -58,9 +58,11 @@ export default {
   },
 
   created() {
-    // getRecordData()
+    this.getRecordData()
     this.polling()
   },
+  mounted(){
+  }
 }
 
 </script>
