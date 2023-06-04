@@ -5,7 +5,7 @@ a demo
 ## Introduction
 
 example:
-![](./doc/front.png)
+![](./docs/front.png)
 
 ## Deploy
 
@@ -18,5 +18,3 @@ in `dashboard/`:
 ```shell
 python manage.py runserver --noreload
 ```
-
-because we don't want to start two subprocess of classifier.

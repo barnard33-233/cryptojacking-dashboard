@@ -23,12 +23,3 @@ def response_DeviceRecord(request: HttpRequest):
     device_record_json['data'] = json.loads(serializers.serialize('json', device_record))
     return JsonResponse(device_record_json)
 
-def response_AjaxTest(request: HttpRequest):
-    devices = [
-        DeviceRecord(mac="ff:ff:ff:ff:ff:ff", ip="255.255.255.255", safety=1),
-        DeviceRecord(mac="00:00:00:00:00:00", ip="0.0.0.0", safety=0),
-    ]
-    devices_json = {}
-    devices_json['data'] = json.loads(serializers.serialize('json', devices))
-    response = JsonResponse(devices_json)
-    return response
