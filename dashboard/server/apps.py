@@ -3,7 +3,6 @@ from django.apps import apps
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
 import threading
-from .tests import test_data
 import classifier.classify as classify
 mtime = ""
 
