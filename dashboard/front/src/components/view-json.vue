@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-  <el-card class="card" shadow="always"  v-for="item in data">
+  <el-card class="card" shadow="always" v-for="item in data">
     <span class="mac" :style="get_color(item)">{{item.pk}}</span>
     <div class="ip">ip: {{item.fields.ip}}</div>
   </el-card>

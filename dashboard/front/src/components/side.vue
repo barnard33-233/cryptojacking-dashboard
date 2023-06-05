@@ -2,7 +2,7 @@
   <el-container class="side-container">
 
     <el-main class="side-main">
-      <img src="../assets/WHU_Logo.svg" class="logo">
+      <img src="../assets/logo.svg" class="logo">
 
       <div class="menu">
         <el-row class="item">
@@ -32,6 +32,7 @@
     </el-footer>
 
   </el-container>
+  
 </template>
 
 <script>
@@ -55,9 +56,9 @@ export default{
 
 .logo{  
   margin-top: 40px;
-  margin-left: 40px;
-  height: 60px;
-  width: 60px;
+  margin-left: 60px;
+  height: 130px;
+  width: 130px;
 }
 
 .menu{
@@ -94,9 +95,9 @@ export default{
 
 .footer-text{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
-  font-size: small;
+  font-size: 1.2em;
   color: rgb(0, 115, 187);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 </style>
