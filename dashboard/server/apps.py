@@ -14,9 +14,11 @@ class ServerConfig(AppConfig):
         # TODO: try catch
         global mtime
         mtime = ""
-        try:
-            DeviceRecord = apps.get_model('server', 'devicerecord')
-            Modified = apps.get_model('server', 'modified')
+        DeviceRecord = apps.get_model('server', 'devicerecord')
+        Modified = apps.get_model('server', 'modified')
+
+        try:        
+            Modified_count = Modified.objects.count()
         except Exception as e:
             # if database is not prepared, do migration
             print("[!] This should be a migration!")
@@ -24,8 +26,6 @@ class ServerConfig(AppConfig):
             # TODO: report
             return super().ready()
 
-        
-        Modified_count = Modified.objects.count()
         print(Modified_count)
         if Modified_count == 0:
             Modified.objects.create(mtime=datetime.datetime.now())
