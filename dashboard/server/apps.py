@@ -40,55 +40,6 @@ class ServerConfig(AppConfig):
         print(Modified.objects.count())
 
         # start detector subprocess
-        start_detector()
-        print("[+] Server started...")
 
         return super().ready()
 
-
-class Detector:
-    def __init__(self) -> None:
-        self.df = classify.init()
-        pass
-
-    def packet_capture(self):
-        # TODO call the real packet_capture here
-        return None
-    
-    def classify(self, data):
-        return classify.classifier(self.df)
-
-    def mainloop(self):
-        DeviceRecord = apps.get_model('server', 'devicerecord')
-        Modified = apps.get_model('server', 'modified')
-        while True:
-            print("[+] Classify Start")
-            # time.sleep(3) # XXX DEBUG, delete this later
-
-            # get data
-            data = self.packet_capture()
-
-            # classify
-            results = self.classify(data)
-            # write it to database
-            for result in results:
-                data = result['data']
-                try:
-                    record = DeviceRecord.objects.get(mac=result['mac'])
-                except ObjectDoesNotExist:
-                    record = DeviceRecord.objects.create(mac=result['mac'], ip=data['ip'], safety=data['safety'])
-                else:
-                    record.ip = data['ip']
-                    record.safety = data['safety']
-                    record.save()
-            Modified.objects.all().update(mtime=datetime.datetime.now())
-            print("[+] Classify end")
-
-
-def start_detector():
-    # new a Detector
-    detector = Detector()
-    # create a subprocess
-    detector_thread = threading.Thread(target=detector.mainloop)
-    detector_thread.start()
-    pass
