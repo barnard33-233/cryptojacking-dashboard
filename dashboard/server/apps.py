@@ -11,7 +11,6 @@ class ServerConfig(AppConfig):
     name = 'server'
 
     def ready(self) -> None:
-        # TODO: try catch
         global mtime
         mtime = ""
         DeviceRecord = apps.get_model('server', 'devicerecord')

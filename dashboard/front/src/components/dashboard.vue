@@ -1,7 +1,3 @@
-<!--
-TODO: 整体设计
-
--->
 <template>
   <el-container class="main-container">
     <el-aside class="aside">
@@ -37,7 +33,6 @@ export default {
   data (){
     return {
       record: null,
-      msg: "hihihi"
     }
   },
 
